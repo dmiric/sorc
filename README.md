@@ -1,4 +1,4 @@
-<p align="center">A progressive <a href="http://nodejs.org" target="_blank">sOrc - Service Orchestration</p>
+# sOrc - Service Orchestration
 
 ## Description
 
