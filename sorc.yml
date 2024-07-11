@@ -1,0 +1,28 @@
+organization:
+  name: Acme
+project:
+  name: Test
+  type: medusa
+  repo_url: http://
+services:
+  - name: medusa backend 1
+    type: node
+    provider: railway.app
+    configuration: link_na_file
+    dependencies: [pgsql, redis, files]
+    environment:
+      - DB_URL={service.pgsql.url}
+      - REDIS_URL={service.redis.url}
+      - JWT_SECRET={service.randomBytes.256} #require('crypto').randomBytes(256).toString('base64'));
+  - name: pgsql
+    type: database
+    provider: neon.tech
+  - name: redis
+    type: database
+    provider: redis.io
+  - name: files
+		type: volume_storage
+		provider: S3
+  - name: sorc server
+    type: workflow_orchestration
+    provider: GCF
