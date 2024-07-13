@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { ProjectConfigService } from './project-config/project-config.service';
+import { SpecificationService } from './specification/specification.service';
 
 @Module({
-  providers: [ProjectConfigService]
+  providers: [SpecificationService]
 })
 export class ProjectModule {}

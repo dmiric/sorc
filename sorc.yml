@@ -21,8 +21,8 @@ services:
     type: database
     provider: redis.io
   - name: files
-		type: volume_storage
-		provider: S3
+    type: volume_storage
+    provider: S3
   - name: sorc server
     type: workflow_orchestration
     provider: GCF
