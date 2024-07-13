@@ -21,16 +21,13 @@ export class DopplerService {
         }
     }
 
-    async getToken() {
+    async getSecret(projectSpec, secretName) {
         try {
-            const result = await this.doppler.secrets.get(this.configService.get<string>('DOPPLER_PROJECT_NAME'), this.configService.get<string>('DOPPLER_CONFIG_NAME'), 'NEON_API_KEY');
-            //console.log(result);
+            const result = await this.doppler.secrets.get(projectSpec.project.doppler.project_name, projectSpec.project.doppler.config_name, secretName);
             console.debug("test", result);
-            console.log("testb");
 
         } catch (err) {
             const error = err as Error;
-            console.log("testa");
             console.dir(JSON.stringify(error));
         }
     }

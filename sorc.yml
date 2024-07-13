@@ -4,6 +4,9 @@ project:
   name: Test
   type: medusa
   repo_url: http://
+  doppler:
+    project_name: sorc-dev
+    config_name: dev
 services:
   - name: medusa backend 1
     type: node

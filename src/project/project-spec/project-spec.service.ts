@@ -3,7 +3,7 @@ import { readFileSync } from 'fs';
 import * as yaml from 'js-yaml';
 
 @Injectable()
-export class SpecificationService {
+export class ProjectSpecService {
 
     public load(file = 'sorc.yml') {
         return yaml.load(
